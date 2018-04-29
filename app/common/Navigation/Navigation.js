@@ -12,6 +12,8 @@ import { link, navTitle } from './styles.css';
 import SearchField from './SearchField';
 import MenuDropdown from './MenuDropdown';
 import ButtonMenu from './ButtonMenu';
+import IconButton from 'material-ui/IconButton';
+import SearchIcon from 'material-ui-icons/Search';
 import Logo from 'svg-react-loader?name=Logo!../../assets/logo_women_and_color.svg';
 
 const styles = {
@@ -102,7 +104,12 @@ const Navigation = props => {
                     <SearchField updateSearchParams={updateSearchParams} />
                   </Grid>
                 )}
-                <Grid item xs={6} sm={6} md={4}>
+                <Grid item xs={3} sm={3} hidden={{ mdUp: true }}>
+                  <IconButton color="secondary" type="submit" style={styles.searchButton}>
+                    <SearchIcon />
+                  </IconButton>
+                </Grid>
+                <Grid item xs={3} sm={3} md={4}>
                   <Grid container justify="flex-end">
                     <Hidden smDown>
                       <ButtonMenu menuItems={menuItems} />
